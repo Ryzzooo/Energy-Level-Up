@@ -1,0 +1,102 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #FFF5E4;
+    color: #4A4A4A;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #FFF5E4;
+}
+::-webkit-scrollbar-thumb {
+    background: #E8DFF5;
+    border-radius: 20px;
+    border: 2px solid #FFF5E4;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #D2C1E8;
+}
+
+/* Floating Bobbing Animation for Cute Mascot */
+@keyframes floatCute {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(3deg); }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { filter: drop-shadow(0 0 8px rgba(232, 223, 245, 0.8)); }
+    50% { filter: drop-shadow(0 0 18px rgba(199, 233, 255, 1)); }
+}
+
+.animate-float {
+    animation: floatCute 4s ease-in-out infinite;
+}
+
+.animate-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.pastel-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 10px 25px -5px rgba(210, 193, 232, 0.4), 0 8px 10px -6px rgba(199, 233, 255, 0.4);
+    border-radius: 1.5rem;
+}
+
+.pastel-btn {
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 6px 0px rgba(0,0,0,0.06);
+}
+
+.pastel-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.08);
+}
+
+.pastel-btn:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 2px 0px rgba(0,0,0,0.06);
+}
+
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 5rem; }
+button, select, summary { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+#tabBtn0, #tabBtn1, #tabBtn2 { white-space: nowrap; flex-shrink: 0; }
+.tab-scroll { scrollbar-width: thin; }
+.formula { background:#faf5ff; border:2px dashed #d8b4f8; border-radius:1rem; padding:.75rem 1rem; text-align:center; font-family:'Cambria Math','STIX Two Math','Times New Roman',serif; font-size:1.1rem; color:#4c1d95; overflow-x:auto; line-height:2; }
+.formula sub, .formula sup { font-size:.7em; }
+.frac { display:inline-flex; flex-direction:column; align-items:center; vertical-align:middle; margin:0 .25rem; line-height:1.35; }
+.frac > span:first-child { border-bottom:1.5px solid currentColor; padding:0 .4rem .1rem; }
+.frac > span:last-child { padding:.1rem .4rem 0; }
+article[id^="hal-"] { scroll-margin-top: calc(var(--hdr, 68px) + 56px); }
+.flow { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem; }
+.flow span { background:#f3e8ff; color:#581c87; font-weight:700; font-size:.8rem; padding:.35rem .7rem; border-radius:999px; }
+.flow span + span::before { content:'→'; margin-right:.5rem; color:#9333ea; }
+.flow span + span { background:transparent; padding-left:0; }
+.flow span + span::after { content:''; }
+.bnav-btn { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; padding:8px 2px; font-size:11px; font-weight:800; color:#6b7280; transition: background .2s, color .2s; }
+.bnav-btn i { font-size:18px; }
+.bnav-btn.active { color:#6d28d9; background:#f3e8ff; }
+@media (max-width: 767px) {
+    input, select, textarea { font-size: 16px !important; }
+    .pastel-card { border-radius: 1.1rem; }
+    .pastel-btn:hover { transform: none; }
+    table { min-width: 32rem; }
+    .steps > :last-child:nth-child(odd) { grid-column: span 2; }
+}
+
+@media print {
+    .no-print { display: none !important; }
+    #bottomNav { display: none !important; }
+    .print-only { display: block !important; }
+    body { background: white !important; font-size: 12pt; }
+    .pastel-card { border: 1px solid #ccc !important; box-shadow: none !important; }
+}
